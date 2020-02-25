@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <title>PHYSCI 70: Intro to Digital Fabrication </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +26,93 @@
       <p> And here is a	<a href='../index.html'>link</a>.
 
       </p>
+
+      <pre><code class="language-arduino">
+// constants won't change. They're used here to set pin numbers:
+const int buttonPin = 2;     // the number of the pushbutton pin
+const int ledPin =  13;      // the number of the LED pin
+
+// variables will change:
+int buttonState = 0;         // variable for reading the pushbutton status
+
+//This function causes the LED to flash a 'dot'
+void dot(){
+  digitalWrite(ledPin, HIGH);
+    delay(250);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(250);
+}
+
+//This function causes the LED to flash a "dash"
+void dash(){
+  digitalWrite(ledPin, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(250);
+}
+
+
+void setup() {
+  // put your setup code here, to run once:
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    // turn LED on:   
+    //Each of these sections of dots/dashes correspond to a letter -- they spell "JUAN IS COOL"
+    dot();
+    dash();
+    dash();
+    dash();
+
+    dot();
+    dot();
+    dash();
+
+    dot();
+    dash();
+
+    dash();
+    dot();
+
+    dot();
+    dot();
+
+    dot();
+    dot();
+    dot();
+
+    dash();
+    dot();
+    dash();
+    dot();
+
+    dash();
+    dash();
+    dash();
+
+    dash();
+    dash();
+    dash();
+
+    dot();
+    dash();
+    dot();
+    dot();
+  } else {
+    // turn LED off:
+    digitalWrite(ledPin, LOW);
+  }
+}
+      </code></pre>
    
   </div>
 
